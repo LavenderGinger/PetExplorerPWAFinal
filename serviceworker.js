@@ -16,6 +16,8 @@ const urlsToCache = [
   'src/firebase.js',
   'src/indexedDB.js',
   'src/sync.js',
+  'https://fonts.googleapis.com/icon?family=Material+Icons',
+  'fonts.gstatic.com/s/materialicons/v145/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2',
   'materialize-v1.0.0/materialize/css/materialize.min.css',
   'materialize-v1.0.0/materialize/js/materialize.min.js',
   'images/pexels-chevanon-1108099.jpg',
