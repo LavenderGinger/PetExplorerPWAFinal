@@ -34,11 +34,15 @@ export async function syncIndexedDBToFirebase() {
 export async function refreshOnlineEntries() {
   let new_records = [];
   new_records.push('anchor');
+  try{
   let onlineRecords = await getRecords('pets');
   for (const record of onlineRecords) {
     new_records.push(record.id);
   }
-  return new_records;
+}
+  finally {
+     return new_records;
+  }
 }
 
 window.addEventListener('online', () => {
