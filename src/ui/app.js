@@ -64,11 +64,6 @@ export async function deleteRecordById(id) {
   }
 }
 
-// Sync offline data when back online
-window.addEventListener('online', () => {
-  syncIndexedDBToFirebase().catch(error => notifyUser(`Sync failed: ${error.message}`));
-});
-
 // DOM load event for form interaction
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('petForm');
