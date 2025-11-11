@@ -61,6 +61,11 @@
   transition: color 0.2s, background 0.2s;
 }
 
+.delete-action a:hover {
+  color: #d3d3d3;      /* Slightly grey */
+  transition: color 0.2s, background 0.2s;
+}
+
 .result-large {
    font-size: 2rem;
    font-weight: 600;
