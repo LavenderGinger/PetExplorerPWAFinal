@@ -6,6 +6,7 @@ import { syncIndexedDBToFirebase } from '../sync.js';
 export async function createRecord(data) {
   if (navigator.onLine) {
       try {
+        data.synced = true;
         const id = await addRecord('pets', data);
         return id;
       } catch (error) {

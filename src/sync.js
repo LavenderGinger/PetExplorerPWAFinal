@@ -18,8 +18,8 @@ export async function syncIndexedDBToFirebase() {
             const newId = await addRecord('pets', record);
             record.id = 'firebase-' + newId;
           }
-          //record.synced = true;
-          //await updateIndexedDBRecord(record);
+          record.synced = true;
+          await updateIndexedDBRecord(record);
           notifyUser('Offline data synced');
         }
       } catch (error) {
