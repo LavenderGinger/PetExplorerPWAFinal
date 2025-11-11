@@ -242,9 +242,6 @@
     var elems = document.querySelectorAll('.sidenav');
     M.Sidenav.init(elems, {edge: 'left', draggable: true});
 
-    //Load Pets by default
-    loadPets();
-
     // Highlight the active nav link
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('nav a').forEach(link => {

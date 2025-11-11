@@ -18,7 +18,7 @@ export async function createRecord(data) {
     data.id = 'local-'+Math.floor(Math.random()*10000);
     await addIndexedDBRecord(data);
   }
-    loadPets();
+  
   }
 
 
@@ -82,6 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       notifyUser('Please fill out both fields.');
     }
+
+    //Load Pets by default
+    loadPets();
   });
 });
 

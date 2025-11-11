@@ -1,6 +1,7 @@
 import { getIndexedDBRecords, updateIndexedDBRecord } from './indexedDB.js';
 import { addRecord, getRecords, updateRecord } from './firebase.js';
 import { notifyUser } from './ui/notifications.js';
+import { loadPets } from './ui/app.js';
 
 export async function syncIndexedDBToFirebase() {
   const records = await getIndexedDBRecords();
@@ -29,3 +30,5 @@ export async function syncIndexedDBToFirebase() {
 window.addEventListener('online', () => {
   syncIndexedDBToFirebase();
 });
+
+loadPets();
