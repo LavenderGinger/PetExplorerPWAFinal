@@ -144,3 +144,7 @@ function displayPet(pet) {
   deleteButton.addEventListener("click", () => deletePet(pet.name));
 
 }
+
+function deletePet(pet) {
+  notifyUser('YOU ANIMAL!!! I won\'t delete the beloved pet ' + pet.name + ', got it? Now GO AWAY!');
+}
