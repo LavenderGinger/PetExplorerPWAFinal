@@ -14,6 +14,7 @@ export async function syncIndexedDBToFirebase() {
           } else {
             let entry = { name: record.name, type: record.type, synced: true }
             const newId = await addRecord('pets', entry);
+            record.synced = true;
             await updateIndexedDBRecord(record);
             record.id = 'firebase-' + newId;
         }
