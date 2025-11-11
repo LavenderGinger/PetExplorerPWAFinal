@@ -13,13 +13,14 @@ export async function syncIndexedDBToFirebase() {
             const firebaseId = record.id.replace('firebase-', '');
             await updateRecord('pets', firebaseId, record);
           } else {
+            record.synced = true;
+            new_records.push(record.id);
             const newId = await addRecord('pets', record);
             record.id = 'firebase-' + newId;
           }
           //record.synced = true;
           //await updateIndexedDBRecord(record);
           notifyUser('Offline data synced');
-          new_records.push(record.id)
         }
       } catch (error) {
         notifyUser('Sync error: ' + error.message);
