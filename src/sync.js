@@ -12,6 +12,12 @@ export async function syncIndexedDBToFirebase() {
   for (const record of records) {
     if (!record.synced) {
       try {
+        onlineRecords = await getRecords('pets');
+        for (const rec of onlineRecords) {
+          if (!new_records.includes(rec.id)) {
+            new_records.push(rec.id);
+          }
+        }
         if (!new_records.includes(record.id)) {
           if (record.id.startsWith('firebase-')) {
             const firebaseId = record.id.replace('firebase-', '');
