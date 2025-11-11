@@ -114,14 +114,14 @@ function displayPet(pet) {
   }
 
   // Check if the pet already exists in the UI and remove it
-  const existingPet = petContainer.querySelector(`[data-id="pet_${pet.name}"]`);
+  const existingPet = petContainer.querySelector(`[data-id="pet_${pet.id}"]`);
   if (existingPet) {
     existingPet.remove();
   }
 
   // Create new pet HTML and add it to the container
   const html = `
-    <div class="card-panel white row valign-wrapper" data-id="pet_${pet.name}">
+    <div class="card-panel white row valign-wrapper" data-id="pet_${pet.id}">
       <div class="col s2">
         <i class="large material-icons prefix">pets</i>
       </div>
@@ -139,9 +139,9 @@ function displayPet(pet) {
   petContainer.insertAdjacentHTML("beforeend", html);
 
   const deleteButton = petContainer.querySelector(
-    `[data-id="pet_${pet.name}"] .pet-delete`
+    `[data-id="pet_${pet.id}"] .pet-delete`
   );
-  deleteButton.addEventListener("click", () => deletePet(pet.name));
+  deleteButton.addEventListener("click", () => deletePet(pet.id));
 
 }
 
@@ -152,8 +152,8 @@ function deletePet(pet) {
   if (existingPet) {
     existingPet.remove();
   }
-  deleteRecord('pets','nonworkingID');
-  deleteIndexedDBRecord('nonworkingID');
+  deleteRecord('pets',pet);
+  deleteIndexedDBRecord(pet);
   if (pet=="Licorice")
   {
       petContainer.innerHTML = "<div class=\"card-panel white row valign-wrapper\" data-id=\"no_pet_yet\"><div class=\"col s2\"><i class=\"large material-icons prefix\">pets</i></div><div class=\"pet-detail col s8\"><h5 class=\"pet-title black-text\">No loving pets yet</h5><div class=\"pet-type\">Please submit your pet's details to get started</div></div><div class=\"col s2 right-align\">&nbsp;</div></div>";
