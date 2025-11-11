@@ -1,10 +1,14 @@
 import { getIndexedDBRecords, updateIndexedDBRecord } from './indexedDB.js';
-import { addRecord, updateRecord } from './firebase.js';
+import { addRecord, getRecords, updateRecord } from './firebase.js';
 import { notifyUser } from './ui/notifications.js';
 
 export async function syncIndexedDBToFirebase() {
   let new_records = [];
   const records = await getIndexedDBRecords();
+  const onlineRecords = await getRecords('pets');
+  for (const record of onlineRecords) {
+    new_records.push(record.id);
+  }
   for (const record of records) {
     if (!record.synced) {
       try {
