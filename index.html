@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pet Explorer PWA</title>
+
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="materialize-v1.0.0/materialize/css/materialize.min.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#00CCFF" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-wrapper #2196f3 blue">
+      <a href="index.html" class="brand-logo center">Pet Explorer</a>
+
+      <!-- Hamburger for mobile -->
+      <a href="#" data-target="mobile-menu" class="sidenav-trigger right hide-on-med-and-up black-text">
+        <i class="material-icons">menu</i>
+      </a>
+
+      <!-- Desktop Menu -->
+      <ul class="right hide-on-small-and-down">
+        <li><a href="index.html" class="grey-text text-darken-4">Home</a></li>
+        <li><a href="about.html" class="grey-text text-darken-4">About</a></li>
+        <li><a href="contact.html" class="grey-text text-darken-4">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile Side Navigation -->
+  <ul class="sidenav" id="mobile-menu">
+    <li class="subheader">Pet Explorer</li>
+    <li><a href="index.html" class="grey-text text-darken-4">Home</a></li>
+    <li><a href="about.html" class="grey-text text-darken-4">About</a></li>
+    <li>
+      <a href="contact.html" class="grey-text text-darken-4">
+        Contact <i class="material-icons left">mail_outline</i>
+      </a>
+    </li>
+  </ul>
+
+  <main>
+    <div class="container section">
+      <h4 class="center-align">Featured Pets</h4>
+      <div class="input-field">
+        <i class="material-icons prefix">search</i>
+        <input id="search" type="text" placeholder="Search pets..." autocomplete="off" />
+      </div>
+      <div class="row">
+
+        <div class="col s12">
+          <div class="card hoverable">
+            <div class="card-image">
+              <a href="dog.html">
+                <img src="images/pexels-chevanon-1108099.jpg" alt="Dog" class="responsive-img" />
+              </a>
+              <a href="dog.html">
+                <span class="card-title">Dog</span>
+              </a>
+            </div>
+            <div class="card-content">
+              <p>Dogs are friendly and loyal companions available in many breeds, known for their playful nature and ability to form strong bonds with their owners. They often require regular exercise and social interaction to stay happy and healthy.</p>
+              <span class="grey-text" style="font-size: 0.65rem; display: block; margin-top: 4px;">Image by: Photography, Chevanon. “Two Yellow Labrador Retriever Puppies.” Pexels. 22 May 2018. https://www.pexels.com/photo/two-yellow-labrador-retriever-puppies-1108099/</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12">
+          <div class="card">
+            <div class="card-image">
+              <a href="cat.html">
+              <img src="images/pexels-photo4passion-1828874.jpg" alt="Cat" class="responsive-img" loading="lazy" />
+              </a>
+              <a href="cat.html">
+              <span class="card-title">Cat</span>
+            </a>
+            </div>
+            <div class="card-content">
+              <p>Cats are independent and playful pets with unique personalities. They are known for their agility and curiosity and can be affectionate companions while also enjoying their alone time.</p>
+              <span class="grey-text" style="font-size: 0.65rem; display: block; margin-top: 4px;">Image by: Petralli, Matteo. “Orange Tabby Cat With Red Collar on Green Sofa.” Pexels. 23 Jan 2019. https://www.pexels.com/photo/orange-tabby-cat-with-red-collar-on-green-sofa-1828874/</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12">
+          <div class="card">
+            <div class="card-image">
+              <a href="rabbit.html">
+              <img src="images/pexels-pixabay-372166.jpg" alt="Rabbit" class="responsive-img" loading="lazy" />
+              </a>
+              <a href="rabbit.html">
+              <span class="card-title">Rabbit</span>
+              </a>
+            </div>
+            <div class="card-content">
+              <p>Rabbits are gentle and soft creatures perfect for indoor habitats. They enjoy social interaction, require space to hop around, and thrive in environments that provide hiding places and chew toys.</p>
+              <span class="grey-text" style="font-size: 0.65rem; display: block; margin-top: 4px;">Image by: Pixabay. “White and Brown Rabbit on Green Grass Field.” Pexels. 5 Apr 2017. https://www.pexels.com/photo/white-and-brown-rabbit-on-green-grass-field-372166/</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12">
+          <div class="card">
+            <div class="card-image">
+              <a href="guineapig.html">
+              <img src="images/pexels-vika-glitter-392079-18011803.jpg" alt="Guinea Pig" class="responsive-img" loading="lazy" />
+              </a>
+              <a href="guineapig.html">
+              <span class="card-title">Guinea Pig</span>
+              </a>
+            </div>
+            <div class="card-content">
+              <p>Guinea pigs are social and vocal pets that are easy to care for. They communicate with a variety of sounds, enjoy company, and need balanced diets with fresh vegetables and hay.</p>
+              <span class="grey-text" style="font-size: 0.65rem; display: block; margin-top: 4px;">Glitter, Vika. “Guinea Pig against Dandelions.” Pexels. 17 Aug 2023. https://www.pexels.com/photo/guinea-pig-against-dandelions-18011803/</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12">
+          <div class="card">
+            <div class="card-image">
+              <a href="parakeet.html">
+              <img src="images/pexels-frans-van-heerden-201846-1463295.jpg" alt="Parakeet" class="responsive-img" loading="lazy" />
+              </a>
+              <a href="parakeet.html">
+              <span class="card-title">Parakeet</span>
+              </a>
+            </div>
+            <div class="card-content">
+              <p>Parakeets are colorful and intelligent birds capable of mimicking sounds and human speech. They require mental stimulation, social interaction, and a spacious cage to maintain their wellbeing.</p>
+              <span class="grey-text" style="font-size: 0.65rem; display: block; margin-top: 4px;">Image by: V Heerden, Frans. “Rose-ringed Parakeet.” Pexels. 30 Sep 2018. https://www.pexels.com/photo/rose-ringed-parakeet-1463295/</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12">
+          <div class="card">
+            <div class="card-image">
+              <a href="fish.html">
+              <img src="images/pexels-crisdip-35358-128756.jpg" alt="Fish" class="responsive-img" loading="lazy" />
+              </a>
+              <a href="fish.html">
+              <span class="card-title">Fish</span>
+              </a>
+            </div>
+            <div class="card-content">
+              <p>Fish are low-maintenance aquatic pets requiring clean water, proper tank care, and a well-regulated environment. They come in a variety of species, providing peaceful and visually appealing companionship.</p>
+              <span class="grey-text" style="font-size: 0.65rem; display: block; margin-top: 4px;">Image by: Crisdip. “Close Up Photo of Clownfish.” Pexels. 25 July 2016. https://www.pexels.com/photo/close-up-photo-of-clownfish-128756/</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<div class="container section">
+    <h4 class="center-align">Add a Pet</h4>
+    <div class="row">
+      <form id="petForm" class="col s12">
+        <div class="input-field">
+          <input id="petName" type="text" required />
+          <label for="petName">Pet Name</label>
+        </div>
+        <div class="input-field">
+          <input id="petType" type="text" required />
+          <label for="petType">Pet Type</label>
+        </div>
+        <button type="submit" class="btn blue waves-effect waves-light">Save Pet</button>
+      </form>
+    </div>
+  </div>
+
+      <div class="section center-align" style="margin-top: 20px;">
+        <p>
+          Don't know which pet is best? 
+          <a href="./petquiz.html" class="btn blue waves-effect waves-light" style="margin-left: 8px;">
+            Take the Quiz
+          </a>
+        </p>
+      </div>
+  </main>
+
+  <footer class="page-footer #1976d2 blue darken-2">
+    <div class="container center-align">
+      © 2025 Pet Explorer. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Materialize JS -->
+  <script src="./materialize-v1.0.0/materialize/js/materialize.min.js"></script>
+  <script>
+    if ('serviceWorker' in navigator)
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('serviceworker.js')
+        .then(() => console.log('Service Worker registered'))
+        .catch(err => console.error('Service Worker registration failed:', err));
+    });
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.querySelector('#search');
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+        document.querySelectorAll('.card').forEach(card => {
+          const title = card.querySelector('.card-title').textContent.toLowerCase();
+          card.style.display = title.includes(query) ? '' : 'none';
+        });
+      });
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Initialize sidenav normally
+    var elems = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(elems, {edge: 'left', draggable: true});
+
+    // Highlight the active nav link
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+        link.style.fontWeight = 'bold';
+        link.style.color = '#ffffff'; // White for contrast
+      }
+    });
+  });
+</script>
+<script type="module" src="./src/ui/app.js"></script>
+</body>
+</html>

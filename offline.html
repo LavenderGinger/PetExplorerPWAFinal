@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pet Explorer PWA</title>
+
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="materialize-v1.0.0/materialize/css/materialize.min.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#00CCFF" />
+</head>
+<body class="blue lighten-1 white-text">
+
+  <div class="container center-align" style="margin-top: 10vh;">
+    <i class="material-icons large" style="font-size: 6rem;">cloud_off</i>
+    <h4>You are offline</h4>
+    <p class="flow-text">
+      Oops! It looks like you are not connected to the internet.<br>
+      Please check your connection and try again.
+    </p>
+    <a href="index.html" class="btn waves-effect waves-light white blue-text text-darken-2">
+      Return Home
+    </a>
+  </div>
+
+<!-- Materialize JS -->
+  <script src="./materialize-v1.0.0/materialize/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      var elems = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(elems, {edge: 'left', draggable: true});
+    });
+  </script>
+  <script>
+    if ('serviceWorker' in navigator)
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('serviceworker.js')
+        .then(() => console.log('Service Worker registered'))
+        .catch(err => console.error('Service Worker registration failed:', err));
+    });
+  </script>
+</body>
+</html>

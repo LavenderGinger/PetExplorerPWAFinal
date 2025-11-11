@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fish - Pet Explorer</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="materialize-v1.0.0/materialize/css/materialize.min.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#00CCFF" />
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper #2196f3 blue">
+      <a href="index.html" class="brand-logo center">Pet Explorer</a>
+      <a href="#" data-target="mobile-menu" class="sidenav-trigger right hide-on-med-and-up black-text">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-small-and-down">
+        <li><a href="index.html" class="grey-text text-darken-4">Home</a></li>
+        <li><a href="about.html" class="grey-text text-darken-4">About</a></li>
+        <li><a href="contact.html" class="grey-text text-darken-4">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <ul class="sidenav" id="mobile-menu">
+    <li class="subheader">Pet Explorer</li>
+    <li><a href="index.html" class="grey-text text-darken-4">Home</a></li>
+    <li><a href="about.html" class="grey-text text-darken-4">About</a></li>
+    <li>
+      <a href="contact.html" class="grey-text text-darken-4">
+        Contact <i class="material-icons left">mail_outline</i>
+      </a>
+    </li>
+  </ul>
+  <main class="container section">
+    <div class="card">
+      <div class="card-image">
+        <img src="images/pexels-crisdip-35358-128756.jpg" alt="Fish" class="responsive-img"/>
+      </div>
+      <div class="card-content">
+        <h4>Fish</h4>
+        <p>Fish are peaceful, visually captivating pets that need clean water, proper nutrition, and an appropriately sized tank.</p>
+        <ul>
+          <li><strong>Lifespan:</strong> 2–10 years (species-dependent)</li>
+          <li><strong>Diet:</strong> Fish flakes, pellets, fresh/frozen foods</li>
+          <li><strong>Temperament:</strong> Calm, peaceful, engaging</li>
+        </ul>
+      </div>
+      <div class="card-action">
+        <a href="index.html" class="blue-text text-darken-2">
+          <i class="material-icons left">arrow_back</i> Back to Home
+        </a>
+      </div>
+    </div>
+  </main>
+  <footer class="page-footer #1976d2 blue darken-2">
+    <div class="container center-align">
+      © 2025 Pet Explorer. All rights reserved.
+    </div>
+  </footer>
+  <script src="./materialize-v1.0.0/materialize/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      var elems = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(elems, {edge: 'left', draggable: true});
+    });
+  </script>
+</body>
+</html>

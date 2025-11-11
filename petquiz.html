@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Pet Explorer</title>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="materialize-v1.0.0/materialize/css/materialize.min.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#00CCFF" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-wrapper #2196f3 blue">
+      <a href="index.html" class="brand-logo center">Pet Explorer</a>
+
+      <!-- Hamburger menu icon for medium and small screens -->
+      <a href="#" data-target="mobile-menu" class="sidenav-trigger right hide-on-med-and-up black-text">
+        <i class="material-icons">menu</i>
+      </a>
+
+      <!-- Desktop menu -->
+      <ul class="right hide-on-small-and-down">
+        <li><a href="index.html" class="grey-text text-darken-4">Home</a></li>
+        <li><a href="about.html" class="grey-text text-darken-4">About</a></li>
+        <li><a href="contact.html" class="grey-text text-darken-4">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile side navigation -->
+  <ul class="sidenav" id="mobile-menu">
+    <li class="subheader">Pet Explorer</li>
+    <li><a href="index.html" class="grey-text text-darken-4">Home</a></li>
+    <li><a href="about.html" class="grey-text text-darken-4">About</a></li>
+    <li>
+      <a href="contact.html" class="grey-text text-darken-4">
+        Contact <i class="material-icons left">mail_outline</i>
+      </a>
+    </li>
+  </ul>
+  <!-- Main container -->
+  <main class="container section">
+    <h4 class="center-align">Find Your Ideal Pet</h4>
+    <form id="quizForm">
+      <p>How much time can you spend walking a pet daily?</p>
+      <p><label><input name="q1" type="radio" value="a" required /><span>Less than 30 minutes</span></label></p>
+      <p><label><input name="q1" type="radio" value="b" /><span>30-60 minutes</span></label></p>
+      <p><label><input name="q1" type="radio" value="c" /><span>More than 1 hour</span></label></p>
+
+      <p>Do you prefer a pet that is quiet or social?</p>
+      <p><label><input name="q2" type="radio" value="a" required /><span>Quiet</span></label></p>
+      <p><label><input name="q2" type="radio" value="b" /><span>Social</span></label></p>
+
+      <p>Which environment best suits you?</p>
+      <p><label><input name="q3" type="radio" value="a" required /><span>Apartment or small space</span></label></p>
+      <p><label><input name="q3" type="radio" value="b" /><span>House with yard</span></label></p>
+
+      <button class="btn waves-effect waves-light" type="submit">Get Result</button>
+    </form>
+
+    <div id="result" class="section center-align" style="margin-top:20px; font-weight:bold;"></div>
+  </main>
+
+  <footer class="page-footer #1976d2 blue darken-2">
+    <div class="container center-align">
+      © 2025 Pet Explorer. All rights reserved.
+    </div>
+  </footer>
+  <script src="./materialize-v1.0.0/materialize/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      var elems = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(elems, {edge: 'left', draggable: true});
+    });
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      M.Sidenav.init(document.querySelectorAll('.sidenav'));
+      const form = document.getElementById('quizForm');
+      const resultDiv = document.getElementById('result');
+
+      const petScores = {
+        q1: {
+          a: { cat: 2, fish: 3, rabbit: 2 },
+          b: { dog: 3, parakeet: 2 },
+          c: { dog: 5 }
+        },
+        q2: {
+          a: { fish: 5, rabbit: 3 },
+          b: { dog: 5, guineapig: 3, parakeet: 4 }
+        },
+        q3: {
+          a: { cat: 5, fish: 4, guineapig: 3 },
+          b: { dog: 5, rabbit: 4, parakeet: 2 }
+        }
+      };
+
+      const petNames = { 
+        dog: "Dog", 
+        cat: "Cat", 
+        fish: "Fish", 
+        rabbit: "Rabbit", 
+        guineapig: "Guinea Pig", 
+        parakeet: "Parakeet" 
+      };
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const totals = { dog:0, cat:0, fish:0, rabbit:0, guineapig:0, parakeet:0 };
+        for(const [q, a] of data.entries()) {
+          const scores = petScores[q][a];
+          for(let pet in scores){
+            totals[pet] += scores[pet];
+          }
+        }
+        let winner = null;
+        let max = -Infinity;
+        for(let pet in totals){
+          if(totals[pet] > max){
+            max = totals[pet];
+            winner = pet;
+          }
+        }
+        resultDiv.innerHTML = winner ? `<h5 class="flow-text">Your ideal pet is a <span class="blue-text">${petNames[winner]}</span>!</h5>` : '<h5>Please complete all questions.</h5>';
+      });
+    });
+  </script>
+</body>
+</html>

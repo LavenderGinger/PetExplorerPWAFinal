@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pet Explorer PWA</title>
+
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="materialize-v1.0.0/materialize/css/materialize.min.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#00CCFF" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-wrapper #2196f3 blue">
+      <a href="index.html" class="brand-logo center">Pet Explorer</a>
+
+      <!-- Hamburger for mobile -->
+      <a href="#" data-target="mobile-menu" class="sidenav-trigger right hide-on-med-and-up black-text">
+        <i class="material-icons">menu</i>
+      </a>
+
+      <!-- Desktop Menu -->
+      <ul class="right hide-on-small-and-down">
+        <li><a href="index.html" class="grey-text text-darken-4">Home</a></li>
+        <li><a href="about.html" class="grey-text text-darken-4">About</a></li>
+        <li><a href="contact.html" class="grey-text text-darken-4">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile Side Navigation -->
+  <ul class="sidenav" id="mobile-menu">
+    <li class="subheader">Pet Explorer</li>
+    <li><a href="index.html" class="grey-text text-darken-4">Home</a></li>
+    <li><a href="about.html" class="grey-text text-darken-4">About</a></li>
+    <li>
+      <a href="contact.html" class="grey-text text-darken-4">
+        Contact <i class="material-icons left">mail_outline</i>
+      </a>
+    </li>
+  </ul>
+
+  <main>
+  <div class="container section">
+    <h4>About Pet Explorer</h4>
+    <p>
+      Pet Explorer is your go-to resource for discovering and learning about a variety of pets. Whether you're a pet owner or a pet enthusiast, our goal is to provide comprehensive information to help you take care of your beloved companions.
+    </p>
+    <p>
+      We feature detailed guides, care tips, and fun facts about common pets like dogs, cats, rabbits, guinea pigs, parakeets, and more. We are committed to making pet care accessible and enjoyable for everyone.
+    </p>
+  </div>
+</main>
+  <footer class="page-footer #1976d2 blue darken-2">
+    <div class="container center-align">
+      © 2025 Pet Explorer. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="./materialize-v1.0.0/materialize/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      var elems = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(elems, {edge: 'left', draggable: true});
+    });
+  </script>
+  <script>
+    if ('serviceWorker' in navigator)
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('serviceworker.js')
+        .then(() => console.log('Service Worker registered'))
+        .catch(err => console.error('Service Worker registration failed:', err));
+    });
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Initialize sidenav normally
+    var elems = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(elems, {edge: 'left', draggable: true});
+
+    // Highlight the active nav link
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('nav a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+        link.style.fontWeight = 'bold';
+        link.style.color = '#ffffff'; // White for contrast
+      }
+    });
+  });
+</script>
+</body>
+</html>
