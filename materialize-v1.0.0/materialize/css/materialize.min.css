@@ -61,7 +61,7 @@
   transition: color 0.2s, background 0.2s;
 }
 
-.delete-action i:hover {
+.delete-action :hover {
   color: #d3d3d3;      /* Slightly grey */
   transition: color 0.2s;
 }
