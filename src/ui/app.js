@@ -145,7 +145,7 @@ function displayPet(pet) {
 
 }
 
-function deletePet(pet) {
+async function deletePet(pet) {
   const petContainer = document.querySelector(".petcoll");
     // Check if the pet already exists in the UI and remove it
   const existingPet = petContainer.querySelector(`[data-id="pet_${pet}"]`);
@@ -154,9 +154,10 @@ function deletePet(pet) {
   }
   deleteRecord('pets',pet);
   deleteIndexedDBRecord(pet);
+  const remaining = await getRecords('pets');
+  notifyUser('Sad day... only ' + remaining.size + ' lovely pets remaining.');
   if (pet=="Licorice")
   {
       petContainer.innerHTML = "<div class=\"card-panel white row valign-wrapper\" data-id=\"no_pet_yet\"><div class=\"col s2\"><i class=\"large material-icons prefix\">pets</i></div><div class=\"pet-detail col s8\"><h5 class=\"pet-title black-text\">No loving pets yet</h5><div class=\"pet-type\">Please submit your pet's details to get started</div></div><div class=\"col s2 right-align\">&nbsp;</div></div>";
   }
-  notifyUser('R.I.P. ' + pet + ', Are you happy? Now GO AWAY!');
 }
