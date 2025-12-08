@@ -8,13 +8,13 @@
   <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />-->
   <link rel="stylesheet" href="materialize-v1.0.0/materialize/css/materialize.min.css" />
   <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#00CCFF" />
+  <meta name="theme-color" content="#FF8400" />
 </head>
 <body>
 
   <!-- Navbar -->
   <nav>
-    <div class="nav-wrapper #2196f3 blue">
+    <div class="nav-wrapper #FF7518 orange">
       <a href="index.html" class="brand-logo center">Pet Explorer</a>
 
       <!-- Hamburger menu icon for medium and small screens -->
@@ -59,13 +59,13 @@
       <p><label><input name="q3" type="radio" value="a" required /><span>Apartment or small space</span></label></p>
       <p><label><input name="q3" type="radio" value="b" /><span>House with yard</span></label></p>
 
-      <button class="btn waves-effect waves-light" type="submit">Get Result</button>
+      <button class="btn waves-effect orange waves-light" type="submit">Get Result</button>
     </form>
 
     <div id="result" class="section center-align" style="margin-top:20px; font-weight:bold;"></div>
   </main>
 
-  <footer class="page-footer #1976d2 blue darken-2">
+  <footer class="page-footer #FF7518 orange darken-2">
     <div class="container center-align">
       © 2025 Pet Explorer. All rights reserved.
     </div>
@@ -127,7 +127,7 @@
             winner = pet;
           }
         }
-        resultDiv.innerHTML = winner ? `<h5 class="flow-text">Your ideal pet is a <span class="blue-text">${petNames[winner]}</span>!</h5>` : '<h5>Please complete all questions.</h5>';
+        resultDiv.innerHTML = winner ? `<h5 class="flow-text">Your ideal pet is a <span class="orange-text">${petNames[winner]}</span>!</h5>` : '<h5>Please complete all questions.</h5>';
       });
     });
   </script>

@@ -10,30 +10,28 @@
   <!-- Materialize CSS -->
   <link rel="stylesheet" href="materialize-v1.0.0/materialize/css/materialize.min.css" />
   <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#00CCFF" />
+  <meta name="theme-color" content="#FF8400" />
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav>
-    <div class="nav-wrapper #2196f3 blue">
+    <div class="nav-wrapper #FF7518 orange">
       <a href="index.html" class="brand-logo center">Pet Explorer</a>
 
-      <!-- Hamburger for mobile -->
       <a href="#" data-target="mobile-menu" class="sidenav-trigger right hide-on-med-and-up black-text">
         <i class="material-icons">menu</i>
       </a>
 
-      <!-- Desktop Menu -->
       <ul class="right hide-on-small-and-down">
         <li><a href="index.html" class="grey-text text-darken-4">Home</a></li>
         <li><a href="about.html" class="grey-text text-darken-4">About</a></li>
         <li><a href="contact.html" class="grey-text text-darken-4">Contact</a></li>
+        <li><a href="auth.html" id="sign-in" class="grey-text text-darken-4">Sign In</a></li>
+        <li><a href="#" id="sign-out" class="grey-text text-darken-4">Sign Out</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Mobile Side Navigation -->
   <ul class="sidenav" id="mobile-menu">
     <li class="subheader">Pet Explorer</li>
     <li><a href="index.html" class="grey-text text-darken-4">Home</a></li>
@@ -43,6 +41,8 @@
         Contact <i class="material-icons left">mail_outline</i>
       </a>
     </li>
+    <li><a href="auth.html" id="sign-in-mobile" class="grey-text text-darken-4">Sign In</a></li>
+    <li><a href="#" id="sign-out-mobile" class="grey-text text-darken-4">Sign Out</a></li>
   </ul>
 
   <main>
@@ -190,7 +190,7 @@
           <input id="petType" type="text" required />
           <label for="petType">Pet Type</label>
         </div>
-        <button type="submit" class="btn blue waves-effect waves-light">Save Pet</button>
+        <button type="submit" class="btn orange waves-effect waves-light">Save Pet</button>
       </form>
     </div>
   </div>
@@ -198,14 +198,14 @@
       <div class="section center-align" style="margin-top: 20px;">
         <p>
           Don't know which pet is best? 
-          <a href="./petquiz.html" class="btn blue waves-effect waves-light" style="margin-left: 8px;">
+          <a href="./petquiz.html" class="btn orange waves-effect waves-light" style="margin-left: 8px;">
             Take the Quiz
           </a>
         </p>
       </div>
   </main>
 
-  <footer class="page-footer #1976d2 blue darken-2">
+  <footer class="page-footer #FF7518 orange darken-2">
     <div class="container center-align">
       © 2025 Pet Explorer. All rights reserved.
     </div>
